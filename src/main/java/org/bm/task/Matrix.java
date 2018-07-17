@@ -37,6 +37,21 @@ public class Matrix {
 		throw new MatrixExeption();
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder s = new StringBuilder("\nMatrix: " + getVerticalSize()
+				+ "x" + getHorizontalSize() + "\n");
+
+		for (int[] row : matrix){
+			for (int value : row){
+				s.append(value + " ");
+			}
+			s.append("\n");
+		}
+		
+		return s.toString();
+	}
+
 	/*
 	 * Check the possibility of going beyond the range of matrix
 	 */
