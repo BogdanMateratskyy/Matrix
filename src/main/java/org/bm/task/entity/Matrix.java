@@ -1,13 +1,15 @@
-package org.bm.task;
+package org.bm.task.entity;
+
+import org.bm.task.exeption.MatrixException;
 
 public class Matrix {
 
 	private int[][] matrix;
 
-	public Matrix(int n, int m) throws MatrixExeption {
+	public Matrix(int n, int m) throws MatrixException {
 
 		if (n < 1 || m < 1) {
-			throw new MatrixExeption();
+			throw new MatrixException();
 		}
 
 		matrix = new int[n][m];
@@ -21,26 +23,26 @@ public class Matrix {
 		return matrix[0].length;
 	}
 
-	public int getElement(int i, int j) throws MatrixExeption {
+	public int getElement(int i, int j) throws MatrixException {
 
 		if (checkRange(i, j)) { // Check i and j
 			return matrix[i][j];
 		}
 
-		throw new MatrixExeption();
+		throw new MatrixException();
 	}
 
-	public void setElement(int i, int j, int value) throws MatrixExeption {
+	public void setElement(int i, int j, int value) throws MatrixException {
 		if (checkRange(i, j)) { // Check i and j
 			matrix[i][j] = value;
 		}
-		throw new MatrixExeption();
+		throw new MatrixException();
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder s = new StringBuilder("\nMatrix: " + getVerticalSize()
-				+ "x" + getHorizontalSize() + "\n");
+		StringBuilder s = new StringBuilder("\nMatrix: " + matrix.length
+				+ "x" + matrix[0].length + "\n");
 
 		for (int[] row : matrix){
 			for (int value : row){
