@@ -15,7 +15,7 @@ public class MatrixCreator {
 	 * @param start
 	 * @param end
 	 */
-	public void fillRandomized(Matrix m, int start, int end) {
+	public static void fillRandomized(Matrix m, int start, int end) {
 		int v = m.getVerticalSize();
 		int h = m.getHorizontalSize();
 

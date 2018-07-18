@@ -26,22 +26,22 @@ public class Multiplier {
 		// Create result matrix
 		Matrix result = new Matrix(v, h);
 
-		try{
-			//Multiply
-		for (int i = 0; i < v; i++) {
-			for (int j = 0; j < h; j++) {
-				int value = 0;
-				for (int k = 0; k < tmp; k++) {
-					value += a.getElement(i, k) * b.getElement(k, j);
+		try {
+			// Multiply
+			for (int i = 0; i < v; i++) {
+				for (int j = 0; j < h; j++) {
+					int value = 0;
+					for (int k = 0; k < tmp; k++) {
+						value += a.getElement(i, k) * b.getElement(k, j);
+					}
+					result.setElement(i, j, value);
 				}
-				result.setElement(i, j, value);
 			}
-		}
-		}catch (MatrixException e){
+		} catch (MatrixException e) {
 			// Exception is impossible according to the code logic, so
 			// processing is omitted
 		}
-		
+
 		return result;
 	}
 }

@@ -35,7 +35,7 @@ public class Matrix {
 	public void setElement(int i, int j, int value) throws MatrixException {
 		if (checkRange(i, j)) { // Check i and j
 			matrix[i][j] = value;
-		}
+		}else 
 		throw new MatrixException();
 	}
 
